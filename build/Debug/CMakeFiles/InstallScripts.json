@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/RM/libxr_exe/diankong_jie/build/Debug/cmake_install.cmake",
+		"E:/RM/libxr_exe/diankong_jie/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,95 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : {},
+				"path" : "C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/bin/starm-clang.exe",
+				"version" : ""
+			},
+			"language" : "ASM",
+			"sourceFileExtensions" : 
+			[
+				"s",
+				"S",
+				"asm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang/19/include",
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang-runtimes/arm-none-eabi/armv7m_hard_fpv4_sp_d16_exn_rtti/include",
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang-runtimes/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"ob"
+					]
+				},
+				"path" : "C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/bin/starm-clang.exe",
+				"version" : "19.1.6"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang-runtimes/arm-none-eabi/include/c++/v1",
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang/19/include",
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang-runtimes/arm-none-eabi/armv7m_hard_fpv4_sp_d16/include",
+						"C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/lib/clang-runtimes/arm-none-eabi/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "C:/Users/24137/AppData/Local/stm32cube/bundles/st-arm-clang/19.1.6+st.10/bin/starm-clang++.exe",
+				"version" : "19.1.6"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}
