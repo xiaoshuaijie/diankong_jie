@@ -27,6 +27,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bsp_dwt.h"
 
 /* USER CODE END Includes */
 
@@ -87,6 +88,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  DWT_Init(SystemCoreClock / 1000000U);
 
   /* USER CODE END SysInit */
 

@@ -1,6 +1,15 @@
 ## [0.1.0] - 2026-06-01
 
 ### 快速修改
+- **[构建配置]**: 按 task/component/calucate/bsp/arithmetic 目录结构同步 CMake 源文件和头文件搜索路径 — by xiaoshuaijie
+  - 类型: 快速修改（无方案包）
+  - 文件: CMakeLists.txt:45-119
+- **[NRF24L01 模块]**: 将 NRF24L01 驱动源文件中的英文注释替换为中文注释 — by xiaoshuaijie
+  - 类型: 快速修改（无方案包）
+  - 文件: modules/NRF24L01/NRF24L01.c:1-699, modules/NRF24L01/NRF24L01.h:1-586
+- **[game 模块]**: 将裁判系统接收迁移到 UART BSP 循环 DMA，并新增 game FreeRTOS 任务接入 — by xiaoshuaijie
+  - 类型: 简化流程实现
+  - 文件: modules/game/game.h, modules/game/game.c, task/game_task.h, task/game_task.c, Core/Src/freertos.c, CMakeLists.txt, modules/game/game.md
 - **[构建配置]**: 将 component 目录加入 CMake 构建目标 — by xiaoshuaijie
   - 类型: 快速修改（无方案包）
   - 文件: CMakeLists.txt:46-60
@@ -13,3 +22,21 @@
 - **[串口 BSP]**: 按参考 UART BSP 风格补充 DMA RX/TX 注释 — by xiaoshuaijie
   - 类型: 快速修改（无方案包）
   - 文件: bsp/bsp_uart/bsp_uart.c:1-600, bsp/bsp_uart/bsp_uart.h:1-120
+- **[CAN 与 DJI 电机]**: 接入对象式 CAN 收发接口，新增 DJI 电流帧发送与电机反馈回调适配 — by xiaoshuaijie
+  - 类型: 计划实现
+  - 文件: bsp/bsp_can/bsp_can.h, bsp/bsp_can/bsp_can.c, modules/motor/dj_motor/dj_motor_ctrl.h, modules/motor/dj_motor/dj_motor_ctrl.c, modules/motor/dj_motor/dj_motor_drv.h, modules/motor/dj_motor/dj_motor_drv.c, CMakeLists.txt
+- **[USB BSP]**: 新增对象式 USB CDC BSP，并将 CDC 接收与发送完成回调接入 BSP 分发 — by xiaoshuaijie
+  - 类型: 计划实现
+  - 文件: bsp/bsp_usb/bsp_usb.h, bsp/bsp_usb/bsp_usb.c, USB_DEVICE/App/usbd_cdc_if.c, CMakeLists.txt
+- **[VOFA USB]**: 新增基于 USB CDC BSP 的 VOFA 模块和 FreeRTOS 任务，支持 firewater 上行与 ASCII 命令下行 — by xiaoshuaijie
+  - 类型: 计划实现
+  - 文件: modules/vofa_usb/vofa_usb.h, modules/vofa_usb/vofa_usb.c, vofa_usb_task/vofa_usb_task.h, vofa_usb_task/vofa_usb_task.c, Core/Src/freertos.c, CMakeLists.txt
+- **[DJI 底盘电机]**: 将 DJI 底盘链路改为 CAN ISR 入队、2ms chassis 任务消费反馈并统一发送电流帧 — by xiaoshuaijie
+  - 类型: 计划实现
+  - 文件: modules/motor/dj_motor/dj_motor_ctrl.h, modules/motor/dj_motor/dj_motor_ctrl.c, task/chassis/chassis_task.h, task/chassis/chassis_task.c, calucate/chassis_control/chassis_control.c, arithmetic/pid/pid_location/pid_location.c, component/comp_utils.c, Core/Src/freertos.c, CMakeLists.txt
+- **[DM 电机与 DWT]**: 将 DM 电机接入对象式 CAN 队列收发，并恢复 pid_location 的 DWT 动态 dt — by xiaoshuaijie
+  - 类型: 计划实现
+  - 文件: modules/motor/dm_motor/dm_motor_ctrl.h, modules/motor/dm_motor/dm_motor_ctrl.c, modules/motor/dm_motor/dm_motor_drv.h, modules/motor/dm_motor/dm_motor_drv.c, arithmetic/pid/pid_location/pid_location.c, bsp/dwt/bsp_dwt.c, bsp/dwt/bsp_dwt.h, Core/Src/main.c, CMakeLists.txt
+- **[BSP 外设封装]**: 按 DR16 风格统一 CAN/UART/PWM/IIC/USB/DWT BSP 注释 — by xiaoshuaijie
+  - 方案: [202606071744_bsp-comment-style](archive/2026-06/202606071744_bsp-comment-style/)
+  - 决策: bsp-comment-style#D001(只统一注释风格，不做代码重构)

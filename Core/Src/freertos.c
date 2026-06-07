@@ -25,6 +25,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "chassis_task.h"
+#include "game_task.h"
+#include "vofa_usb_task.h"
 
 /* USER CODE END Includes */
 
@@ -45,6 +48,24 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+osThreadId_t chassisHandle;
+const osThreadAttr_t chassis_attributes = {
+  .name = "chassis",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+osThreadId_t gameHandle;
+const osThreadAttr_t game_attributes = {
+  .name = "game",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+osThreadId_t vofaUsbHandle;
+const osThreadAttr_t vofa_usb_attributes = {
+  .name = "vofa_usb",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -169,6 +190,9 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  chassisHandle = osThreadNew(start_chassis_task, NULL, &chassis_attributes);
+  gameHandle = osThreadNew(game_task, NULL, &game_attributes);
+  vofaUsbHandle = osThreadNew(vofa_usb_task, NULL, &vofa_usb_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */

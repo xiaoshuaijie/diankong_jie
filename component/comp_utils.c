@@ -33,9 +33,25 @@ inline float inv_sqrtf(float x) {
 }
 
 /**
- * @brief 
- * 
+ * @brief 将值限制在-limit和limit之间。
+ *
+ * @param x 输入
+ * @param limit 上下界的绝对值
+ * @return float 操作后的值
  */
+float abs_clampf(float x, float limit) {
+  const float abs_limit = fabsf(limit);
+  if (x > abs_limit) {
+    return abs_limit;
+  }
+
+  if (x < -abs_limit) {
+    return -abs_limit;
+  }
+
+  return x;
+}
+
 /**
  * @brief 将值限制在下限和上限之间。
  *
