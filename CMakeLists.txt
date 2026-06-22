@@ -48,7 +48,7 @@ set(USER_SOURCES
     arithmetic/referee/crc_ref.c
     bsp/dwt/bsp_dwt.c
     calucate/chassis_control/chassis_control.c
-    calucate/joint_control/joint_control.c
+    # calucate/joint_control/joint_control.c
     modules/dr16/dev_dr16.c
     modules/game/game.c
     modules/lx824/lx824.c
@@ -56,17 +56,17 @@ set(USER_SOURCES
     modules/motor/dj_motor/dj_motor_drv.c
     modules/motor/dm_motor/dm_motor_ctrl.c
     modules/motor/dm_motor/dm_motor_drv.c
-    modules/vt13/vt13.c
+    # modules/vt13/vt13.c
     modules/vofa/vofa.c
     modules/vofa_usb/vofa_usb.c
     task/chassis_task/chassis_task.c
     task/dr16_task/dr16_task.c
     task/game_task/game_task.c
-    task/joint_task/joint_task.c
+    # task/joint_task/joint_task.c
     task/lx824_task/lx824_task.c
     task/vofa_task/vofa_task.c
     task/vofa_usb_task/vofa_usb_task.c
-    task/vt13_task/vt13_task.c
+    # task/vt13_task/vt13_task.c
 )
 
 # Add sources to executable
